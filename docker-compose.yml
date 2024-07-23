@@ -1,0 +1,12 @@
+version: '2.24'
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: ./.docker/Dockerfile
+    env_file: ./.env
+    environment:
+      - $SECRET_KEY=$SECRET_KEY
+    ports:
+      - $API_PORT:$API_PORT
